@@ -8,6 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 import clsx from "clsx";
 import ProfileIcon from "../icons/ProfileIcon";
 import BellIcon from "../icons/BellIcon";
+import MenuIcon from "../icons/MenuIcon";
 
 type Props = {};
 
@@ -15,27 +16,46 @@ function NavBar({}: Props) {
   const pathName = usePathname();
   console.log("mypath", typeof pathName);
   return (
-    <div className="px-5 bg-white-500 flex items-center w-full border-y-2">
+    <div className="px-5 bg-white-500 flex items-center w-full ">
       <div className="text-2xl font-bold">Logo</div>
       <div className="flex gap-4 p-5 justify-center  w-full ">
         <Link
           href="/"
-          className={`flex gap-2 hover:text-blue-600 ${
+          className={`flex items-center gap-2 hover:text-blue-600 ${
             pathName == "/" ? "text-green-500 font-bold" : ""
           } : `}
         >
           {" "}
           <HomeIcon />
-          <Link href="/"> Home</Link>
+          <div className="text-[0.8rem]">Home</div>
         </Link>
-        <Link href="/order" className="flex gap-2 hover:text-blue-600">
+        <Link
+          href="/menu"
+          className={`flex items-center gap-2 hover:text-blue-600 ${
+            pathName == "/menu" ? "text-green-500 font-bold" : ""
+          } : `}
+        >
+          <MenuIcon />
+          <div className="text-[0.8rem]">Menu</div>
+        </Link>
+        <Link
+          href="/order"
+          className={`flex items-center gap-2 hover:text-blue-600 ${
+            pathName == "/order" ? "text-green-500 font-bold" : ""
+          } : `}
+        >
           {" "}
           <OrderIcon />
-          <Link href="order"> Order List</Link>
+          <div className="text-[0.8rem]">Order List</div>
         </Link>
-        <Link href="/history" className="flex gap-2 hover:text-blue-600">
+        <Link
+          href="/history"
+          className={`flex items-center gap-2 hover:text-blue-600 ${
+            pathName == "/history" ? "text-green-500 font-bold" : ""
+          } : `}
+        >
           <HistoryIcon />
-          History
+          <div className="text-[0.8rem]">History</div>
         </Link>
       </div>
       <div className="flex gap-4 items-center">

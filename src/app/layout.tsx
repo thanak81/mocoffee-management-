@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "./pages/NavBar";
-
+import { AppSidebar } from "@/components/ui/app-sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -15,8 +16,8 @@ const geistMono = Geist_Mono({
 
 const poppins = Poppins({
   weight: "400",
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -30,11 +31,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={poppins.className}
-      >
-        <NavBar/>
-        {children}
+      <body className={poppins.className}>
+        <SidebarProvider>
+          <AppSidebar />
+          <div className="w-full">
+            <div className="w-full flex items-center border-y-2">
+              <div className="ml-4">
+                <SidebarTrigger />
+              </div>
+              <NavBar />
+            </div>
+            <main className="p-5">{children}</main>
+          </div>
+        </SidebarProvider>
       </body>
     </html>
   );

@@ -85,7 +85,6 @@ function OrderList({}: Props) {
     return (qty*price)*4000
   }
   return (
-    <main>
       <section className="my-5">
         <div className="flex gap-4 flex-wrap">
           {orderListData.map((order) => (
@@ -209,7 +208,6 @@ function OrderList({}: Props) {
           ))}
         </div>
       </section>
-    </main>
   );
 }
 
