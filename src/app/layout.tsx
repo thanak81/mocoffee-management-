@@ -34,14 +34,14 @@ export default function RootLayout({
       <body className={poppins.className}>
         <SidebarProvider>
           <AppSidebar />
-          <div className="w-full">
+          <div className="w-full overflow-y-hidden h-screen">
             <div className="w-full flex items-center border-y-2">
               <div className="ml-4">
                 <SidebarTrigger />
               </div>
               <NavBar />
             </div>
-            <main className="p-5">{children}</main>
+            <main className="p-5 ">{children}</main>
           </div>
         </SidebarProvider>
       </body>

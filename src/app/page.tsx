@@ -20,7 +20,7 @@ let employee : {id: number , name: string} =  {
 const myarr1:number[] = [1,3,5,7,9];
 
   return (
-    <div className="sadasd">
+    <div className="w-full h-screen overflow-y-hidden">
       <MainPage/>
     </div>
   );

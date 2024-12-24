@@ -47,36 +47,7 @@ function OrderList({}: Props) {
       order_description: "to hrd",
       order_status: "In Progress",
     },
-    {
-      order_id: 3,
-      order_name: "Ice Latte",
-      order_price: 1.25,
-      order_date: new Date(),
-      order_quantity: 5,
-      order_sugarPercentage: "50",
-      order_description: "to hrd",
-      order_status: "Canceled",
-    },
-    {
-      order_id: 4,
-      order_name: "Ice Latte",
-      order_price: 1.25,
-      order_date: new Date(),
-      order_quantity: 5,
-      order_sugarPercentage: "50",
-      order_description: "to hrd",
-      order_status: "Canceled",
-    },
-    {
-      order_id: 5,
-      order_name: "Ice Latte",
-      order_price: 1.25,
-      order_date: new Date(),
-      order_quantity: 5,
-      order_sugarPercentage: "50",
-      order_description: "to hrd",
-      order_status: "Canceled",
-    },
+
   ];
   function orderPriceFinal(qty: number, price: number): number{
     return qty * price
